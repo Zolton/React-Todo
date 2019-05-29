@@ -12,7 +12,7 @@
 ## Instructions
 
 - Your job is to write the components to complete the Todo List application.
-- Your todo list should be fully functional and you should design it however you'd like. Feel free to get creative here. I have supplied a gif for you to see what the MVP functionality is required to look like over the course of the two days.
+- Your todo list should be fully functional and you should design it however you'd like. Feel free to get creative here. I have supplied a gif for you to see what the MVP functionality is required to look like over the course of the two days.ss
 
 ![Todo App MVP](todo.gif)
 
