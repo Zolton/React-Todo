@@ -2,7 +2,7 @@ import React from "react"
 
 function TodoForm (props) {
     return (
-        <form className = "form" onSubmit={e=> props.addTask(e)}>
+        <form className = "form" onSubmit={e => props.addTask(e)}>
         <input 
         type="text" 
         name="taskInput"
@@ -11,7 +11,7 @@ function TodoForm (props) {
         onChange={e=>props.changeHandler(e)}
         />
          <button>Submit</button>
-         <button>Clear</button>
+         <button onClick={e=>props.clearCompleted(e)}>Clear </button>
          </form>
     )
 }

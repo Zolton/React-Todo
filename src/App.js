@@ -12,14 +12,14 @@ class App extends React.Component {
       {
         task: 'Organize Garage',
         id: 1528817077286,
-        completed: false
+        completed: true
       },
       {
         task: 'Bake Cookies',
         id: 1528817084358,
         completed: false
       }
-    ]
+    ],
     taskInput:""
   }
   
@@ -31,23 +31,37 @@ class App extends React.Component {
 
   }
   
-  addTask = e => {e.preventDefault()
-  const newTask ={
+  addTask = e => {
+    e.preventDefault()
+    const newTask ={
     task: this.state.taskInput,
     id: Date.now(),
     completed: false,
   }
   this.setState ({
-    tasks: [...this.state.tasks, newTask]
+    tasks: [...this.state.tasks, newTask],
     taskInput: ""
   })
   }
+clearCompleted = e => {
+e.preventDefault();
+this.setState ({
+  tasks: this.state.tasks.filter((task) => !task.completed)
+})
+};
+
+
   render() {
     return (
       <div>
         <h2>Todo List</h2>
         <TodoList tasks={this.state.tasks} />
-        <TodoForm taskInput={this.state.taskImput} changeHangler={this.changeHandler} addTask={this.addTask}/>
+        <TodoForm 
+        taskInput={this.state.taskInput} 
+        changeHandler={this.changeHandler} 
+        addTask={this.addTask}
+        clearCompleted={this.clearCompleted}
+        />
       </div>
     );
   }
