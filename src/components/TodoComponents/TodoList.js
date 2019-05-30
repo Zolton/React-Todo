@@ -3,6 +3,8 @@
 
 import React from 'react';
 
+class iterateArray extends React.Component {
+    
 const todosArray = [
     {
       task: "Organize Garage",
@@ -26,9 +28,10 @@ const todosArray = [
     }
   ];
 
-
+render () {
 const dataList = todosArray.map(test => {
     return <div>{test.task}</div>
 })
-
+}
+}
 export default TodoList

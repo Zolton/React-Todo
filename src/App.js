@@ -20,11 +20,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        
+        <h2>{this.task}</h2>
+        <h2><TodoList />
           <h2>
-          <TodoForm newTask={this.state.task} />
+          <TodoForm task={this.state.task} newTask={this.newTask} />
           </h2>
-        
       </div>
     );
   }

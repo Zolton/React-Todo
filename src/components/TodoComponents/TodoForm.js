@@ -5,19 +5,21 @@ class TodoForm extends React.Component {
 
 
 taskChange = event => {
-    this.setState({newTask: event.target.value})
+    this.setState({task: event.target.value})
 }
 
+render () {
 return (
-    <form>
-        <input placeholder="Enter task here" 
-            onChange={taskChange} />
-    </form>
-    <button>Enter</button>
-    <button>Clear</button>
+
+    <div>
+        <form>
+         <input placeholder="Enter task here" onChange={this.newTask}/>
+        </form>
+        <button onClick={taskChange}>Enter</button>
+        <button>Clear</button>
+    </div>
     )
 }
-
-
+}
 
 export default TodoForm
