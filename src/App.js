@@ -21,7 +21,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>{this.task}</h2>
-        <h2><TodoList />
+        
           <h2>
           <TodoForm task={this.state.task} newTask={this.newTask} />
           </h2>
@@ -29,10 +29,6 @@ class App extends React.Component {
     );
   }
 }
-
-
-
-
 
 
 export default App;
