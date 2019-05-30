@@ -10,12 +10,12 @@ class App extends React.Component {
   state = {
     tasks: [
       {
-        task: "Organize Garage",
+        phrase: "Organize Garage",
         id: 1528817077286,
         completed: false
       },
       {
-        task: "Bake Cookies",
+        phrase: "Bake Cookies",
         id: 1528817084358,
         completed: false
       }
@@ -35,7 +35,7 @@ class App extends React.Component {
   addTask = e => {
     e.preventDefault();
     const newTask = {
-      task: this.state.taskInput,
+      phrase: this.state.taskInput,
       id: Date.now(),
       completed: false
     };
@@ -54,13 +54,14 @@ class App extends React.Component {
     });
   };
 
-  
-  toggleTask = e => {
+
+  toggleTask = id => {
+    console.log(id)
     this.setState(prevTask => {
       return {
         tasks: prevTask.tasks.map(tasks => {
           if (tasks.id === id) {
-            tasks.completed = !taskscompleted;
+            tasks.completed = !tasks.completed;
             return tasks;
           }
             else {
@@ -93,7 +94,7 @@ class App extends React.Component {
         <TodoList 
         tasks={this.state.tasks}
         //strikethrough on click
-        onClick={this.toggleTask}
+        toggleTask={this.toggleTask}
         />
         <TodoForm
           taskInput={this.state.taskInput}

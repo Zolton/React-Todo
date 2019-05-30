@@ -4,9 +4,10 @@ import React from "react"
 function Todo (props) {
     return (
         <div
-        style={props.tasks.completed ? {textDecoration: 'line-through', color: "black"} : null}
+        onClick={e=>props.toggleTask(props.task.id)}
+        style={props.task.completed ? {textDecoration: 'line-through', color: "black"} : null}
         >
-            <p>{props.task}</p>
+            <p>{props.task.phrase}</p>
 
         </div>
     )
